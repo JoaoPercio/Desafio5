@@ -2,7 +2,7 @@ import { get, put, post, remove } from '@/helpers/http';
 
 const BASE_PATH = 'administradores';
 
-export function fetchUsuarios() {
+export function fetchAdministradores() {
   return get(`${BASE_PATH}`);
 }
 

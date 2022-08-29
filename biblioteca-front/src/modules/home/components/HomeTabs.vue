@@ -13,7 +13,20 @@
         <biblioteca-p class="opacity--50 my--md">( Sem imoveis )</biblioteca-p>
       </div>
     </el-tab-pane>
-    <el-tab-pane label="Últimos Administradores" name="usuarios">
+    <el-tab-pane label="Últimos Tipos de Imoveis" name="usuarios">
+      <div v-if="usuarioList.length">
+        <div
+          v-for="usuario in usuarioList"
+          :key="usuario.id"
+          class="mb--xl">
+          <biblioteca-usuario-card :usuario="usuario" />
+        </div>
+      </div>
+      <div v-else>
+        <biblioteca-p class="opacity--50 my--md">( Sem tipos de imoveis )</biblioteca-p>
+      </div>
+    </el-tab-pane>
+    <el-tab-pane label="Últimos Administradores" name="administradores">
       <div v-if="usuarioList.length">
         <div
           v-for="usuario in usuarioList"
@@ -31,7 +44,8 @@
 
 <script>
 import { fetchLivros } from '@/modules/imovel/imovel.service';
-import { fetchUsuarios } from '@/modules/administrador/administrador.service';
+import { fetchUsuarios } from '@/modules/tipoimovel/tipoimovel.service';
+import { fetchAdministradores } from '@/modules/administrador/administrador.service';
 import { fetchEmprestimos } from '@/modules/emprestimo/emprestimo.service';
 
 import BibliotecaLivroCard from '@/modules/imovel/components/ImovelCard.vue';
@@ -62,6 +76,8 @@ export default {
         this.fetchLivros();
       } else if (this.tabActive === 'usuarios') {
         this.fetchUsuarios();
+      } else if (this.tabActive === 'administradores') {
+        this.fetchAdministradores();
       }
     },
     fetchLivros() {
@@ -89,6 +105,15 @@ export default {
         })
         .catch(() => {
           this.emprestimoList = [];
+        });
+    },
+    fetchAdministradores() {
+      fetchAdministradores()
+        .then(data => {
+          this.usuarioList = data.data;
+        })
+        .catch(() => {
+          this.usuarioList = [];
         });
     },
   },

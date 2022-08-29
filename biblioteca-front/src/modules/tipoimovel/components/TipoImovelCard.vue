@@ -6,7 +6,7 @@
       <biblioteca-icon
         class="mt-2"
         size="xl"
-        icon="person" />
+        icon="building" />
     </biblioteca-col>
     <biblioteca-col
       :sm="20"
@@ -14,11 +14,6 @@
       <biblioteca-header v-truncate size="sm">
         <biblioteca-usuario-link :id="usuario.id">{{ usuario.nome }}</biblioteca-usuario-link>
       </biblioteca-header>
-      <biblioteca-p
-        v-truncate="2"
-        color="regular">
-        {{ usuario.email }}
-      </biblioteca-p>
     </biblioteca-col>
   </biblioteca-row>
 </template>

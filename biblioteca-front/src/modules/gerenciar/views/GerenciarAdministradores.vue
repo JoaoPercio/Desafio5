@@ -60,7 +60,7 @@
 
 <script>
 import { toastError } from '@/services/toastService';
-import { fetchUsuarios, removeUsuario } from '@/modules/administrador/administrador.service';
+import { fetchAdministradores, removeUsuario } from '@/modules/administrador/administrador.service';
 import { goToCreateUsuario } from '@/modules/administrador/administrador.routes';
 
 import BibliotecaUsuarioLink from '@/modules/administrador/components/AdministradorLink.vue';
@@ -84,7 +84,7 @@ export default {
   methods: {
     fetch() {
       this.usuarioList = [];
-      fetchUsuarios()
+      fetchAdministradores()
         .then(data => {
           this.usuarioList = data.data;
         })

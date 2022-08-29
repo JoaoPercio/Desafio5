@@ -20,7 +20,7 @@
           placeholder="Descrição" />
       </div>
       <div class="form-field">
-        <biblioteca-textarea
+        <biblioteca-input
           v-model="livroEditVm.livro.valor"
           label="Valor*"
           name="resumo"

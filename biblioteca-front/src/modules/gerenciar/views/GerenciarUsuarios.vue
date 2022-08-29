@@ -2,9 +2,9 @@
   <biblioteca-single-content-layout container-size="lg">
     <template #content>
       <div class="d--flex justify-content--space-between align-items--center">
-        <biblioteca-header>Usuários</biblioteca-header>
+        <biblioteca-header>Tipos de imoveis</biblioteca-header>
         <biblioteca-button @click="onCreateUsuario">
-          Adicionar Usuário
+          Adicionar Tipo de Imovel
         </biblioteca-button>
       </div>
       <table v-if="usuarioList && usuarioList.length > 0" class="table">
@@ -16,9 +16,6 @@
                   {{ usuario.nome }}
                 </biblioteca-usuario-link>
               </biblioteca-header>
-              <biblioteca-p color="regular">
-                {{ usuario.email }}
-              </biblioteca-p>
             </td>
             <td class="align-middle text-end">
               <el-dropdown

@@ -21,9 +21,9 @@
     </div>
     <div v-else class="mb-3 mt-4">
       <biblioteca-p color="danger">
-        *Você não possui usuários cadastrados
+        *Você não possui tipos de imoveis cadastrados
         <biblioteca-button @click="onCreate">
-          Criar Usuário
+          Criar tipo de imovel
         </biblioteca-button>
       </biblioteca-p>
     </div>

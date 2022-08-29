@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { fetchUsuarios } from '@/modules/administrador/administrador.service';
+import { fetchAdministradores } from '@/modules/administrador/administrador.service';
 import { goToCreateUsuario } from '@/modules/administrador/administrador.routes';
 
 export default {
@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     onfetch() {
-      fetchUsuarios()
+      fetchAdministradores()
         .then(data => {
           this.usuarios = data.data;
         })

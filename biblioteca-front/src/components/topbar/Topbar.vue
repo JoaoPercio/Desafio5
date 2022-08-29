@@ -8,6 +8,9 @@
         <biblioteca-button @click="onAdministradores">
           Administradores
         </biblioteca-button>
+        <biblioteca-button @click="onUsuarios">
+          Tipos de Imoveis
+        </biblioteca-button>
         <biblioteca-button @click="onLogout">
           Sair
         </biblioteca-button>

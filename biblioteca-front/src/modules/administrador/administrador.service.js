@@ -1,9 +1,9 @@
 import * as usuarioResource from '@/modules/administrador/administrador.resource';
 
-export function fetchUsuarios() {
+export function fetchAdministradores() {
   return new Promise((resolve, reject) =>
     usuarioResource
-      .fetchUsuarios()
+      .fetchAdministradores()
       .then(({ data }) => {
         resolve({
           data,

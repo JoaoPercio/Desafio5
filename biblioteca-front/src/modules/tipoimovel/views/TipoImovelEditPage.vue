@@ -2,10 +2,10 @@
   <biblioteca-single-content-layout container-size="lg">
     <template #content>
       <biblioteca-header v-if="isEditing">
-        Editar Usuário
+        Editar Tipo Imovel
       </biblioteca-header>
       <biblioteca-header v-else>
-        Criar Usuário
+        Criar Tipo Imovel
       </biblioteca-header>
       <biblioteca-usuario-edit-inputs @save="saveUsuario" />
     </template>
@@ -68,7 +68,7 @@ export default {
           } else if ((err.response.data.errors === USUARIO_ERRORS[err.response.status] && err.response.status === 404)) {
             goToUsuarioNotFound(this.$router);
           } else {
-            toastError('Erro ao buscar o livro');
+            toastError('Erro ao buscar o tipo de imovel');
           }
         });
     },
@@ -77,7 +77,7 @@ export default {
         .then(data => {
           goToOpenUsuario(this.$router, data || this.usuario);
         })
-        .catch(() => toastError('Erro ao salvar o usuário'));
+        .catch(() => toastError('Erro ao salvar o imovel'));
     },
   },
 };
